@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,700;0,900;1,100;1,700;1,900&display=swap" rel="stylesheet">
+<style>
+    .text-center{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding-top: 5px;
+        text-decoration:none;
+        color: #EEEEEE;
+        font-family: 'Exo 2';
+        font-style: unset;
+        font-weight: bolder;
+        font-size:45px;
+        transition: text-shadow 0.15s,
+        text-decoration 0.3s
+        ,color 0.3s ease-in-out;
+
+    }
+    .text-center:hover{
+        text-shadow: 5px 5px 5px #6FDC3D;
+        text-decoration:dashed ;
+    }
+    .form{
+        display: flex;
+        flex-direction: column;
+        background-color: #070626;
+        color: #6FDC3D;
+        border-style: solid;
+        margin-left: 200px;
+        margin-right: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        height: 229px;
+        border-radius: 10px;
+        border-style: solid;
+        border-color: #222831;
+        align-items: center;
+        display: flex;
+        /* width: 1050px; */
+        transition: box-shadow 0.9s ease-in-out;
+    }
+    .form:focus{
+        outline: none;
+        box-shadow: 2px 2px 20px #6FDC3D;
+    }
+    .form-check-label{
+        color: #EEEEEE;
+        font-size: 15px;
+        font-family: 'Exo 2';
+        font-weight: bolder;
+    }
+    .btn{
+      display: flex;
+      font-family: 'Exo 2';
+      font-weight: bolder;
+      flex-direction: column;
+      margin-left: 695px;
+      background-color: #6FDC3D;
+      color: #0E040E;
+      border-color: #6FDC3D;
+      transition: opacity 0.15s,box-shadow 0.15s,border-color 0.15s,border-width 0.15s;
+    }
+    .btn:hover{
+      border-width:1.5px;
+      border-color: #0E040E;
+      box-shadow: 2px 2px 15px #6FDC3D;
+      background-color: #6FDC3D;
+      opacity: 0.9;
+    }
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #0E040E;
+    }
+    .dropdown-menu{
+      background-color: #0E040E;
+      color: #6FDC3D;
+    }
+    .form-check-input:checked{
+      background-color: #10ff0453;
+      border-color: #6FDC3D;
+      
+    }  
+    .form-check-input:focus{
+      box-shadow: 0 0 0 1px #6FDC3D, 0 0 0 2px #6FDC3D;
+    }  
+    .bottom-panel {
+      background-color: #070626;
+      font-family: 'Exo 2';
+      color:white;
+      padding: 1px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+    }
+    .bottom-git{
+      color: #EEEEEE;
+    }
+
+</style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg " style="background-color: #0E040E;">
+        <div class="container-fluid">
+          <a class="navbar-brand"  style="color: #6FDC3D; font-weight: bolder; " href="#">Basic Text Modifier</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" style="color:#4BBD54; font-weight: bolder; " href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" style="color: #4BBD54; font-weight: bolder; ">GitHub</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" style="color: #4BBD54; font-weight: bolder; " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Contact Us
+                </a>
+                <ul class="dropdown-menu" >
+                  <li><a class="dropdown-item" style="color: #4BBD54; font-weight: bolder; cursor: pointer; " href="https://github.com/Kanha02052002" target="_blank">GitHub Account</a></li>
+                  <li><a class="dropdown-item" style="color: #4BBD54; font-weight: bolder; " href="https://www.instagram.com/k2g_02/" target="_blank">Instagram</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+<!-- basic form up -->
+    <div style="background-color: #0E040E;">
+        <form  action="analyze" method="get"> {% csrf_token %}
+            <h1 class="text-center">: Enter your text below :</h1><br>
+            <textarea name="text" class="form" id="" cols="145" rows="10"></textarea>
+            <div class="form-check form-switch" style="margin-left: 320px; margin-top: 15px;" >
+                <input class="form-check-input" type="checkbox" name="removepunc" role="switch" id="flexSwitchCheckChecked">
+                <label class="form-check-label" for="flexSwitchCheckChecked">Remove Punctuation</label>
+              </div>
+              <div class="form-check form-switch" style="margin-left: 320px; margin-top: 5px;" >
+                <input class="form-check-input" name="removespace" type="checkbox" role="switch" id="flexSwitchCheckChecked">
+                <label class="form-check-label" for="flexSwitchCheckChecked">Remove Space</label>
+              </div>
+              <div class="form-check form-switch" style="margin-left: 320px; margin-top: 5px;" >
+                <input class="form-check-input" type="checkbox" role="switch" name="removenumber" id="flexSwitchCheckChecked">
+                <label class="form-check-label" for="flexSwitchCheckChecked">Remove Numbers</label>
+              </div>
+              <div class="form-check form-switch" style="margin-left: 320px; margin-top: 5px;" >
+                <input class="form-check-input" type="checkbox" role="switch" name="lowercase" id="flexSwitchCheckChecked">
+                <label class="form-check-label" for="flexSwitchCheckChecked">Lowercase</label>
+              </div>
+              <div class="form-check form-switch" style="margin-left: 320px; margin-top: 5px;" >
+                <input class="form-check-input" type="checkbox" role="switch" name="uppercase" id="flexSwitchCheckChecked">
+                <label class="form-check-label" for="flexSwitchCheckChecked">Uppercase</label>
+              </div>
+              <div class="form-check form-switch" style="margin-left: 320px; margin-top: 5px;" >
+                <input class="form-check-input" type="checkbox" role="switch" name="newlineremover" id="flexSwitchCheckChecked">
+                <label class="form-check-label" for="flexSwitchCheckChecked">Remove Extra Line</label>
+              </div>
+              <br>
+              <button class="btn">Analyze Now</button>
+            </form>
+    </div>
+      
+    <div class="bottom-panel ">
+      @December 2023, made by <a class="bottom-git" href="https://github.com/Kanha02052002" target="_blank">Kanha Khantaal</a> 
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</body>
+</html>
